@@ -1,0 +1,40 @@
+<html><head><meta content="text/html;charset=utf-8" http-equiv="Content-Type"/><style>html,
+body {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+body {
+  font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.4em;
+  color: #4d4d4d;
+  min-width: 230px;
+  margin: 0 auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  font-weight: 300;
+  background-color: #000000;
+}
+
+.game-area {
+  width: 94%;
+  height: 94%;
+  margin: 20px auto;
+}</style><script defer="defer" src="index.js"></script></head><script>function resizeCanvas() {
+var canvas = document.getElementById('canvas');
+var par = canvas.parentElement;
+var cs = getComputedStyle(par);
+
+/// these will return dimensions in *pixel* regardless of what
+/// you originally specified for image:
+var width = parseInt(cs.getPropertyValue('width'), 10);
+var height = parseInt(cs.getPropertyValue('height'), 10);
+
+/// now use this as width and height for your canvas element:
+var canvas = document.getElementById('canvas');
+
+canvas.width = width;
+canvas.height = height;
+}</script><body onload="resizeCanvas();" onresize="resizeCanvas();"><div id="canvas-div" class="game-area"><canvas id="canvas"/></div></body></html>
