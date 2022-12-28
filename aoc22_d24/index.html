@@ -22,6 +22,11 @@ body {
   width: 94%;
   height: 94%;
   margin: 20px auto;
+}
+
+.game-buttons {
+  width: 100%;
+  margin-top: 20px;
 }</style><script defer="defer" src="index.js"></script></head><script>function resizeCanvas() {
 var canvas = document.getElementById('canvas');
 var par = canvas.parentElement;
@@ -37,4 +42,4 @@ var canvas = document.getElementById('canvas');
 
 canvas.width = width;
 canvas.height = height;
-}</script><body onload="resizeCanvas();" onresize="resizeCanvas();"><div id="canvas-div" class="game-area"><canvas id="canvas"/></div></body></html>
+}</script><body onload="resizeCanvas();" onresize="resizeCanvas();"><section class="game-area"><div id="canvas-div" class="game-area"><canvas id="canvas"/></div><div class="game-buttons"><button class="game-button" id="step" onclick="">Step</button> <button class="game-button" id="play-pause" onclick="">▶</button> <button class="game-button" id="reset" onclick="">Reset</button></div></section></body></html>
