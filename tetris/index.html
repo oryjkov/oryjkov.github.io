@@ -1,45 +1,60 @@
-<html><head><meta content="text/html;charset=utf-8" http-equiv="Content-Type"/><style>html,
-body {
-  margin: 0;
-  padding: 0;
-  text-align: center;
-}
-
+<!doctype html><html><head><meta content="text/html;charset=utf-8" http-equiv="Content-Type"/><style>html,
 body {
   font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.4em;
-  color: #4d4d4d;
-  min-width: 230px;
-  margin: 0 auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-font-smoothing: antialiased;
-  font-smoothing: antialiased;
-  font-weight: 300;
+  color: #7d7d7d;
   background-color: #000000;
-}
-
-.game-area {
-  width: 94%;
-  height: 94%;
-  margin: 20px auto;
-}
-
-.game-buttons {
   width: 100%;
-  margin-top: 20px;
+  height: 100%;
+  display: flex;
+  margin: 0px;
+}
+
+#main-container {
+  display: flex;
+  width: 100%;
+}
+
+#game-area {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+#canvas-div {
+  flex: 1 1 auto;
+  margin: 10px;
+  height: 10%;
+}
+
+#game-buttons {
+  flex: 0 1 auto;
+  display: flex;
+  gap: 5px;
+  margin: 10px;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+#debug-area {
+  flex: 0 1 auto;
+  min-width: 200px;
+  margin: 10px auto;
+  white-space: pre-wrap;
 }</style><script defer="defer" src="index.js"></script></head><script>function resizeCanvas() {
-var canvas = document.getElementById('canvas');
-var par = canvas.parentElement;
-var cs = getComputedStyle(par);
+  var canvas = document.getElementById('canvas');
+  var par = canvas.parentElement;
+  var cs = getComputedStyle(par);
 
-/// these will return dimensions in *pixel* regardless of what
-/// you originally specified for image:
-var width = parseInt(cs.getPropertyValue('width'), 10);
-var height = parseInt(cs.getPropertyValue('height'), 10);
+  /// these will return dimensions in *pixel* regardless of what
+  /// you originally specified for image:
+  var width = parseInt(cs.getPropertyValue('width'), 10);
+  var height = parseInt(cs.getPropertyValue('height'), 10);
 
-/// now use this as width and height for your canvas element:
-var canvas = document.getElementById('canvas');
+  /// now use this as width and height for your canvas element:
+  var canvas = document.getElementById('canvas');
 
-canvas.width = width;
-canvas.height = height;
-}</script><body onload="resizeCanvas();" onresize="resizeCanvas();"><section class="game-area"><div id="canvas-div" class="game-area"><canvas id="canvas"/></div><div class="game-buttons"><button class="game-button" id="step" onclick="">Step</button> <button class="game-button" id="play-pause" onclick="">▶</button> <button class="game-button" id="reset" onclick="">Reset</button></div></section></body></html>
+  canvas.width = width;
+  canvas.height = height;
+}</script><body onload="resizeCanvas();" onresize="resizeCanvas();"><div id="main-container"><div id="game-area"><div id="canvas-div"><canvas id="canvas"></canvas></div><div id="game-buttons"><button class="game-button" id="step" onclick="">Step</button> <button class="game-button" id="play-pause" onclick="">▶</button> <button class="game-button" id="reset" onclick="">Reset</button></div></div><div id="debug-area">debug text goes here &#10;asdf</div></div></body></html>
