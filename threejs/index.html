@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>My first three.js app</title>
+    <style>
+      body {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <script src="js/three.js"></script>
+    <script src="my.js"></script>
+    <form>
+      <button id="startNotifications">Start notifications</button>
+      <button id="stopNotifications">Stop notifications</button>
+    </form>
+    <script>
+      document
+        .querySelector("#startNotifications")
+        .addEventListener("click", function (event) {
+          event.stopPropagation();
+          event.preventDefault();
+
+          onStartButtonClick();
+        });
+      document
+        .querySelector("#stopNotifications")
+        .addEventListener("click", function (event) {
+          event.stopPropagation();
+          event.preventDefault();
+
+          onStopButtonClick();
+        });
+    </script>
+  </body>
+</html>
