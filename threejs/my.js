@@ -39,7 +39,7 @@ const material = new THREE.MeshPhongMaterial({ color: 0x00ffff });
 const cube = new THREE.Mesh(geometry, material);
 scene.add(cube);
 
-camera.position.z = 5;
+camera.position.z = 15;
 
 function animate() {
   requestAnimationFrame(animate);
